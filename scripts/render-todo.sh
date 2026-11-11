@@ -9,10 +9,17 @@ mkdir -p entregables .cache
 node scripts/generar-subtitulos.mjs
 npx remotion bundle --out-dir .cache/bundle >/dev/null
 
+# Paso final de cada video:
+#  - color estándar para redes (yuv420p, BT.709, rango limitado) y compresión H.264 de buena calidad
+#  - audio masterizado a aprox. -14 LUFS (el nivel habitual de las redes sociales) con un limitador
+COLOR="scale=in_range=full:in_color_matrix=bt601:out_range=tv:out_color_matrix=bt709,format=yuv420p"
+AUDIO="volume=6dB,alimiter=limit=0.891:attack=5:release=60:level=disabled"
+
 exportar() { # composición, archivo final
   npx remotion render .cache/bundle "$1" ".cache/$1.mp4" --audio-codec=aac --audio-bitrate=256k --log=error
-  # Masterización del audio: sube el nivel a aprox. -14 LUFS (el estándar de redes sociales) con un limitador.
-  ffmpeg -v error -y -i ".cache/$1.mp4" -c:v copy -af "volume=6dB,alimiter=limit=0.891:attack=5:release=60:level=disabled" -c:a aac -b:a 256k -movflags +faststart "entregables/$2"
+  ffmpeg -v error -y -i ".cache/$1.mp4" -vf "$COLOR" -c:v libx264 -preset slow -crf 21 \
+    -color_range tv -colorspace bt709 -color_primaries bt709 -color_trc bt709 \
+    -af "$AUDIO" -c:a aac -b:a 256k -movflags +faststart "entregables/$2"
   echo "listo: entregables/$2"
 }
 
