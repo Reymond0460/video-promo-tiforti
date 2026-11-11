@@ -1,0 +1,29 @@
+{
+  "_nota": "Guion de la narración. 'inicio' = segundo en que parte cada frase. 'tts' = cómo se le escribe al motor de voz (pronunciación). 'subs' = cómo se parte la frase en subtítulos. 'enPantalla': false = la frase ya aparece como titular grande, así que no se repite como subtítulo (sí va en el .srt). Después de editar: npm run voz && npm run subtitulos.",
+  "voz": {"modelo": "es_MX-claude-high", "velocidad": 1.0},
+  "completo": [
+    {"id": "c01", "inicio": 0.5, "tts": "Tienes una idea.", "subs": ["Tienes una idea."], "enPantalla": false},
+    {"id": "c02", "inicio": 2.4, "tts": "Un emprendimiento que levantaste con tus propias manos.", "subs": ["Un emprendimiento que levantaste", "con tus propias manos."]},
+    {"id": "c03", "inicio": 6.2, "tts": "Pero cuando quieres llevarlo al mundo digital, no siempre encuentras lo que necesitas.", "subs": ["Pero cuando quieres llevarlo", "al mundo digital,", "no siempre encuentras", "lo que necesitas."]},
+    {"id": "c04", "inicio": 12.3, "tts": "Hasta que un día, aparece Tiforti.", "subs": ["Hasta que un día,", "aparece TiforTi."]},
+    {"id": "c05", "inicio": 15.1, "tts": "Un equipo que entiende tu idea, y te ayuda a convertirla en una página web hecha para ti.", "subs": ["Un equipo que entiende tu idea,", "y te ayuda a convertirla", "en una página web", "hecha para ti."]},
+    {"id": "c06", "inicio": 21.2, "tts": "Primero, conversamos.", "subs": ["Primero, conversamos."]},
+    {"id": "c07", "inicio": 23.5, "tts": "Escuchamos tu idea, entendemos tu negocio, y diseñamos algo que te represente.", "subs": ["Escuchamos tu idea,", "entendemos tu negocio,", "y diseñamos algo", "que te represente."]},
+    {"id": "c08", "inicio": 30.6, "tts": "Detrás de cada página hay planificación, diseño, desarrollo, y mucha dedicación.", "subs": ["Detrás de cada página", "hay planificación, diseño,", "desarrollo,", "y mucha dedicación."]},
+    {"id": "c09", "inicio": 37.4, "tts": "Cuidamos cada detalle, conectamos lo que tu proyecto necesita, y probamos todo en cada pantalla.", "subs": ["Cuidamos cada detalle,", "conectamos lo que", "tu proyecto necesita,", "y probamos todo", "en cada pantalla."]},
+    {"id": "c10", "inicio": 47.7, "tts": "Y entonces, esa idea que empezó como un sueño.", "subs": ["Y entonces,", "esa idea que empezó", "como un sueño…"]},
+    {"id": "c11", "inicio": 56.2, "tts": "se convierte en algo real, listo para compartir con el mundo.", "subs": ["…se convierte en algo real,", "listo para compartir", "con el mundo."]},
+    {"id": "c12", "inicio": 60.7, "tts": "Sabemos cuánto significa tu emprendimiento para ti.", "subs": ["Sabemos cuánto significa", "tu emprendimiento para ti."]},
+    {"id": "c13", "inicio": 64.2, "tts": "Por eso, en Tiforti, también es importante para nosotros.", "subs": ["Por eso, en TiforTi,", "también es importante", "para nosotros."]},
+    {"id": "c14", "inicio": 68.6, "tts": "Visítanos en tiforti punto ce ele, y hagamos realidad tu próxima idea.", "subs": ["Visítanos en tiforti.cl", "y hagamos realidad", "tu próxima idea."]}
+  ],
+  "corto": [
+    {"id": "k01", "inicio": 0.3, "tts": "Tienes una idea. Un emprendimiento que levantaste con tus propias manos.", "subs": ["Tienes una idea.", "Un emprendimiento que levantaste", "con tus propias manos."]},
+    {"id": "k02", "inicio": 5.6, "tts": "En Tiforti te escuchamos, entendemos tu negocio,", "subs": ["En TiforTi te escuchamos,", "entendemos tu negocio,"]},
+    {"id": "k03", "inicio": 8.9, "tts": "y construimos una página web hecha para ti.", "subs": ["y construimos una página web", "hecha para ti."]},
+    {"id": "k04", "inicio": 12.5, "tts": "Diseño, desarrollo y pruebas, cuidando cada detalle.", "subs": ["Diseño, desarrollo y pruebas,", "cuidando cada detalle."]},
+    {"id": "k05", "inicio": 17.0, "tts": "Hasta que esa idea se convierte en algo real.", "subs": ["Hasta que esa idea", "se convierte en algo real."]},
+    {"id": "k06", "inicio": 23.5, "tts": "Tú tienes la idea. Nosotros la hacemos realidad.", "subs": ["Tú tienes la idea.", "Nosotros la hacemos realidad."]},
+    {"id": "k07", "inicio": 27.1, "tts": "Visítanos en tiforti punto ce ele.", "subs": ["Visítanos en tiforti.cl"]}
+  ]
+}
