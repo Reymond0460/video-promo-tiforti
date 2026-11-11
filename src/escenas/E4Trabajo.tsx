@@ -20,12 +20,12 @@ const Capa: React.FC<{ dia: number; f: number; entrada?: boolean }> = ({ dia, f,
 );
 
 /** Toma del equipo trabajando. La luz de la ventana cuenta el paso del día. */
-const TomaEquipo: React.FC<{ hora: number; poseA: Pose; poseB: Pose; zoom?: number; extra?: React.ReactNode; children?: React.ReactNode; xH?: number; zoomH?: number }> = ({ hora, poseA, poseB, zoom = 1, extra, children, xH = 960, zoomH = 1.02 }) => {
+const TomaEquipo: React.FC<{ hora: number; poseA: Pose; poseB: Pose; zoom?: number; extra?: React.ReactNode; children?: React.ReactNode; xH?: number; zoomH?: number; yV?: number; zoomV?: number }> = ({ hora, poseA, poseB, zoom = 1, extra, children, xH = 960, zoomH = 1.02, yV = 960, zoomV = 1 }) => {
   const frame = useCurrentFrame();
   const { vertical } = useFormato();
   return (
     <AbsoluteFill>
-      <Escenario zoom={vertical ? zoom : zoom * zoomH} x={vertical ? 960 : xH} y={vertical ? 960 : 930} mano={0.8}>
+      <Escenario zoom={vertical ? zoom * zoomV : zoom * zoomH} x={vertical ? 960 : xH} y={vertical ? yV : 930} mano={0.8}>
         <EquipoSVG frame={frame} hora={hora} poseA={poseA} poseB={poseB} extra={extra} />
       </Escenario>
       <Pelicula fuerza={0.8} />
@@ -263,7 +263,7 @@ export const T4Entrega: React.FC<{ dur: number }> = ({ dur }) => {
   const poseB: Pose = { boca: 0.3 + listo * 0.65, ojosRisa: listo * 0.8, mirada: [-listo * 0.6, 0.7 - listo * 0.6], cabeza: -listo * 7, cejas: listo * 0.4, manoI: listo > 0.05 ? [mezclar(-120, -226, choca), mezclar(260, 120, choca)] : null, luzPantalla: 0.5 };
   const tw = vertical ? 1000 : 640;
   return (
-    <TomaEquipo hora={0.08} zoom={1.03} poseA={poseA} poseB={poseB} xH={800} zoomH={1.2}>
+    <TomaEquipo hora={0.08} zoom={1.03} poseA={poseA} poseB={poseB} xH={800} zoomH={1.2} yV={800} zoomV={1.18}>
       <div style={{ position: 'absolute', left: vertical ? 40 : 50, top: vertical ? 372 : 190, width: tw, borderRadius: 22, overflow: 'hidden', background: '#1e1e1e', boxShadow: '0 30px 70px rgba(3,8,24,.5)', opacity: st(f, 0, 8), transform: `translateY(${(1 - fr(f, 0, 12)) * -30}px)` }}>
         <div style={{ height: 40, background: '#3c3c3c', display: 'flex', alignItems: 'center', gap: 8, padding: '0 16px' }}>
           {['#f26b5e', '#f5be4f', '#5bc65a'].map((c) => <span key={c} style={{ width: 13, height: 13, borderRadius: 7, background: c }} />)}
