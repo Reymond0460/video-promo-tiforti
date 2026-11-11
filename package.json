@@ -6,9 +6,9 @@
   "scripts": {
     "studio": "remotion studio",
     "render": "bash scripts/render-todo.sh",
-    "render:vertical": "remotion render PromoVertical entregables/tiforti-promo-vertical-1080x1920.mp4",
-    "render:horizontal": "remotion render PromoHorizontal entregables/tiforti-promo-horizontal-1920x1080.mp4",
-    "render:corto": "remotion render PromoCorto30 entregables/tiforti-promo-corto-30s-1080x1920.mp4",
+    "render:vertical": "bash scripts/render-todo.sh PromoVertical",
+    "render:horizontal": "bash scripts/render-todo.sh PromoHorizontal",
+    "render:corto": "bash scripts/render-todo.sh PromoCorto30",
     "audio": "python3 scripts/generar-musica.py && python3 scripts/generar-sfx.py",
     "voz": "python3 scripts/generar-voz.py",
     "subtitulos": "node scripts/generar-subtitulos.mjs",

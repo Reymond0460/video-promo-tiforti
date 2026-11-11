@@ -8,7 +8,7 @@ export type Version = 'completo' | 'corto';
 export const DURACION: Record<Version, number> = { completo: 75 * FPS, corto: 30 * FPS };
 export const seg = (s: number) => Math.round(s * FPS);
 
-type Linea = { id: string; inicio: number; tts: string; subs: string[]; enPantalla?: boolean };
+type Linea = { id: string; inicio: number; tts: string; subs: string[]; enPantalla?: boolean; ocultar?: number[] };
 type Medida = { dur: number; habla: number; cortes: number[] };
 const medidas = vozTiempos as Record<string, Medida>;
 
@@ -26,6 +26,7 @@ export const subtitulos = (v: Version, soloEnPantalla = true): Subtitulo[] => {
     if (soloEnPantalla && l.enPantalla === false) continue;
     const m = medidas[l.id];
     l.subs.forEach((texto, i) => {
+      if (soloEnPantalla && l.ocultar?.includes(i)) return;
       res.push({ id: `${l.id}-${i}`, texto, desde: l.inicio + m.cortes[i], hasta: l.inicio + m.cortes[i + 1] + (i === l.subs.length - 1 ? 0.25 : 0) });
     });
   }

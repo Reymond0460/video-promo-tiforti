@@ -1,5 +1,5 @@
 {
-  "_nota": "Guion de la narración. 'inicio' = segundo en que parte cada frase. 'tts' = cómo se le escribe al motor de voz (pronunciación). 'subs' = cómo se parte la frase en subtítulos. 'enPantalla': false = la frase ya aparece como titular grande, así que no se repite como subtítulo (sí va en el .srt). Después de editar: npm run voz && npm run subtitulos.",
+  "_nota": "Guion de la narración. 'inicio' = segundo en que parte cada frase. 'tts' = cómo se le escribe al motor de voz (pronunciación). 'subs' = cómo se parte la frase en subtítulos. 'enPantalla': false = la frase ya aparece como titular grande, así que no se repite como subtítulo (sí va en el .srt). 'ocultar': [0] hace lo mismo solo con algunos trozos de la frase. Después de editar: npm run voz && npm run subtitulos.",
   "voz": {"modelo": "es_MX-claude-high", "velocidad": 1.0},
   "completo": [
     {"id": "c01", "inicio": 0.5, "tts": "Tienes una idea.", "subs": ["Tienes una idea."], "enPantalla": false},
@@ -18,7 +18,7 @@
     {"id": "c14", "inicio": 68.6, "tts": "Visítanos en tiforti punto ce ele, y hagamos realidad tu próxima idea.", "subs": ["Visítanos en tiforti.cl", "y hagamos realidad", "tu próxima idea."]}
   ],
   "corto": [
-    {"id": "k01", "inicio": 0.3, "tts": "Tienes una idea. Un emprendimiento que levantaste con tus propias manos.", "subs": ["Tienes una idea.", "Un emprendimiento que levantaste", "con tus propias manos."]},
+    {"id": "k01", "inicio": 0.3, "tts": "Tienes una idea. Un emprendimiento que levantaste con tus propias manos.", "subs": ["Tienes una idea.", "Un emprendimiento que levantaste", "con tus propias manos."], "ocultar": [0]},
     {"id": "k02", "inicio": 5.6, "tts": "En Tiforti te escuchamos, entendemos tu negocio,", "subs": ["En TiforTi te escuchamos,", "entendemos tu negocio,"]},
     {"id": "k03", "inicio": 8.9, "tts": "y construimos una página web hecha para ti.", "subs": ["y construimos una página web", "hecha para ti."]},
     {"id": "k04", "inicio": 12.5, "tts": "Diseño, desarrollo y pruebas, cuidando cada detalle.", "subs": ["Diseño, desarrollo y pruebas,", "cuidando cada detalle."]},
